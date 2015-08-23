@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file application/modules/admin/views/scripts/photo/index.phtml
+ * La view per la gestione delle photo all'interno di un album.
+ *
+ * @category    application
+ * @package     Admin
+ * @subpackage  View_Script
+ * @version     $Id: index.phtml 124 2011-08-03 10:19:56Z flicofloc@gmail.com $
+ */
+
+$this->import_Css(array('js/mootools/3rdpart/moodialog/Source/css/MooDialog'), true);
+
+$this->import_Js(array('mootools/3rdpart/moodialog/Source/Overlay',
+                       'mootools/3rdpart/moodialog/Source/MooDialog',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Fx',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Alert',
+                       'mootools/3rdpart/mootools-form-upload/Source/Request.File',
+                       'mootools/3rdpart/mootools-form-upload/Source/Form.MultipleFileInput',
+                       'mootools/3rdpart/mootools-form-upload/Source/Form.Upload',
+                       'backend/gallery'));
+
+?>
+<h2><?= $this->escape($this->album->Title) ?></h2>
+<div class="link"><a href="<?= $this->url(array('action' => 'index', 'controller' => 'gallery', 'module' => 'admin'), 'default') ?>" title="Back to list">&lt;-- Back to album list</a></div>
+<?= $this->uploadForm ?>
+<?= $this->deleteForm ?>

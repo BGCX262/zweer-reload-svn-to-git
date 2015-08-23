@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file application/views/scripts/messages/index.phtml
+ * La view per la pagina dei messaggi.
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Script
+ * @version     $Id: new.phtml 120 2011-08-02 15:02:35Z flicofloc@gmail.com $
+ */
+
+$this->title = 'Create a message';
+$this->headTitle()->append('Create');
+
+?>
+<div class="link"><a href="<?= $this->url(array('controller' => 'messages', 'action' => 'index'), 'default') ?>" title="Back to inbox">&lt;-- Back to InBox</a></div>
+<?= $this->form ?>

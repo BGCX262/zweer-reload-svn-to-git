@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file application/views/scripts/messages/view.phtml
+ * La view per la pagina di visualizzazione di una conversazione.
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Script
+ * @version     $Id: view.phtml 120 2011-08-02 15:02:35Z flicofloc@gmail.com $
+ */
+
+?>
+<div class="link"><a href="<?= $this->url(array('controller' => 'messages', 'action' => 'index'), 'default') ?>" title="Back to inbox">&lt;-- Back to InBox</a></div>
+<?php foreach($this->messages as $Message) : ?>
+<div class="message">
+    <div class="message_sender"><?= $this->escape($Message->Sender->Name) ?></div>
+    <div class="message_date"><?= strftime("%d/%m/%Y", strtotime($Message->Date)) ?></div>
+    <div class="message_text"><?= $this->escape($Message->Text) ?></div>
+</div>
+<?php endforeach; ?>
+<?= $this->form ?>

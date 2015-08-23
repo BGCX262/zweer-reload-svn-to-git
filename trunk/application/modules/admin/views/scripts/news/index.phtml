@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file application/modules/admin/views/scripts/news/index.phtml
+ * La view per l'elenco della pagine presenti nel sito.
+ *
+ * @category    application
+ * @package     Admin
+ * @subpackage  View_Script
+ * @version     $Id: index.phtml 126 2011-08-03 16:20:17Z flicofloc@gmail.com $
+ */
+
+$this->import_Css(array('backend/movable_list'));
+$this->import_Css(array('js/mootools/3rdpart/mootools-tree/Css/Tree',
+                        'js/mootools/3rdpart/mootools-tree/Css/Collapse',
+                        'js/mootools/3rdpart/moodialog/Source/css/MooDialog'), true);
+
+$this->import_Js(array('mootools/3rdpart/mootools-class-extras/Source/Class.Binds',
+                       'mootools/3rdpart/mootools-class-extras/Source/Class.Singleton',
+                       'mootools/3rdpart/mootools-tree/Source/Tree',
+                       'mootools/3rdpart/mootools-tree/Source/Collapse',
+                       'mootools/3rdpart/moodialog/Source/Overlay',
+                       'mootools/3rdpart/moodialog/Source/MooDialog',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Fx',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Alert',
+                       'backend/news'));
+
+?>
+<div class="link"><a href="<?= $this->url(array('action' => 'new', 'controller' => 'news', 'module' => 'admin'), 'default') ?>" title="Create a news">Create a news</a></div>
+<em>(You can decide the parent of a news, but not the order: they will be displayed ordered by descending date)</em>
+<?= $this->printUlNewsPages($this->pages) ?>

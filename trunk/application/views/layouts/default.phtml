@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file application/views/layouts/default.phtml
+ * Il layout di default dell'applicazione.
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Layout
+ * @version     $Id: default.phtml 117 2011-08-02 10:33:52Z flicofloc@gmail.com $
+ */
+
+$this->import_Css();
+$this->import_Js();
+
+?>
+<?= $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <?= $this->headTitle() . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headMeta()) . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headLink()) . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headStyle()) . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headScript()) . "\n" ?>
+</head>
+
+<body>
+    <div id="page_container">
+        <div id="page_header">
+            <div id="page_header_logged"><?= $this->loggedInAs() ?></div>
+            <div id="page_header_menu"><?=  $this->menu_Default() ?></div>
+        </div>
+        <div id="page_content">
+            <h1><?= $this->title ?></h1>
+            <?= $this->layout()->content ?>
+        </div>
+    </div>
+</body>
+
+</html>

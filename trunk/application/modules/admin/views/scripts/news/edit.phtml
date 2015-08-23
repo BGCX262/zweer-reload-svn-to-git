@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file application/modules/admin/views/scripts/news/edit.phtml
+ * La view per la modifica di una news esistente.
+ *
+ * @category    application
+ * @package     Admin
+ * @subpackage  View_Script
+ * @version     $Id: edit.phtml 124 2011-08-03 10:19:56Z flicofloc@gmail.com $
+ */
+
+$this->import_Js(array('ckeditor/ckeditor', 'backend/news'));
+
+?>
+<div class="link"><a href="<?= $this->url(array('action' => 'index', 'controller' => 'news', 'module' => 'admin'), 'default') ?>" title="Back to list">&lt;-- Back to news list</a></div>
+<?= $this->form ?>

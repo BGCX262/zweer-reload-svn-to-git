@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file application/modules/admin/views/scripts/pages/edit.phtml
+ * La view per la modifica di una pagina esistente.
+ *
+ * @category    application
+ * @package     Admin
+ * @subpackage  View_Script
+ * @version     $Id: edit.phtml 120 2011-08-02 15:02:35Z flicofloc@gmail.com $
+ */
+
+$this->import_Js(array('ckeditor/ckeditor', 'backend/page'));
+
+?>
+<div class="link"><a href="<?= $this->url(array('action' => 'index', 'controller' => 'pages', 'module' => 'admin'), 'default') ?>" title="Back to list">&lt;-- Back to page list</a></div>
+<?= $this->form ?>

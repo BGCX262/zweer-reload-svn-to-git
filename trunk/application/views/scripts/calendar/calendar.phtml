@@ -1,0 +1,32 @@
+<div class="zwe_calendar_container">
+    <div class="zwe_calendar_title">
+        <div class="zwe_calendar_title_month">
+            <?= $this->calendar->get(Zend_Date::MONTH_NAME) ?>
+            <?= $this->calendar->get(Zend_Date::YEAR) ?>
+        </div>
+    </div>
+    <div class="zwe_calendar_table_container">
+        <table class="zwe_calendar_table">
+            <thead>
+                <tr>
+                    <?php foreach($this->calendar->getDayNames() as $dayName) : ?>
+                    <th><?= $dayName ?></th>
+                    <?php endforeach; ?>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($this->calendar->getWeeks() as $weekNum => $week) : ?>
+                <tr>
+                    <?php foreach($week as $dayNum => $day) : ?>
+                    <td>
+                        <?= $day->get(Zend_Date::DAY_SHORT) == 1 ? $day->get(Zend_Date::MONTH_NAME_SHORT) : '' ?>
+                        <?= $day->get(Zend_Date::MONTH) != $this->calendar->get(Zend_Date::MONTH) && $dayNum == 0 ? $day->get(Zend_Date::MONTH_NAME_SHORT) : '' ?>
+                        <?= $day ?>
+                    </td>
+                    <?php endforeach; ?>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>

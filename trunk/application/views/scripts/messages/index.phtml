@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file application/views/scripts/messages/index.phtml
+ * La view per la pagina dei messaggi.
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Script
+ * @version     $Id: index.phtml 112 2011-08-01 14:57:36Z flicofloc@gmail.com $
+ */
+
+?>
+<div class="link"><a href="<?= $this->url(array('controller' => 'messages', 'action' => 'new'), 'default') ?>" title="Send a message">New Message</a></div>
+<?php foreach($this->conversations as $Conversation) : ?>
+<div class="conversation">
+    <div class="conversation_the_other"><?= $this->escape($Conversation->TheOther->Name) ?></div>
+    <div class="conversation_date"><?= strftime("%d/%m/%Y %H:%M", strtotime($Conversation->Date)) ?></div>
+    <div class="conversation_text"><a href="<?= $this->url(array('action' => 'view', 'message' => $Conversation->IDParent), 'messages') ?>"><?= $this->getTextPreview($this->escape($Conversation->Text)) ?></a></div>
+</div>
+<?php endforeach; ?>

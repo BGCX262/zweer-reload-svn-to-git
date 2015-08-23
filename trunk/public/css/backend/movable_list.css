@@ -1,0 +1,26 @@
+ul#movable_list li,
+ul#movable_children_list li.movable_children_list_child
+{
+    cursor: move;
+}
+ul#movable_list li img,
+ul#movable_children_list img
+{
+    margin: 0 3px;
+}
+
+ul#movable_list li a.mover,
+ul#movable_children_list li a.mover
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    background-image: url("../../images/icons/right_arrow_16x16.png");
+    margin-right: 3px;
+}
+ul#movable_list li a.collapse,
+ul#movable_children_list li a.collapse
+{
+    background-image: url("../../images/icons/down_arrow_16x16.png");
+}

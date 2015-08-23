@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file application/views/scripts/login/register.phtml
+ * La view per la registrazione al sito.
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Script
+ * @version     $Id: register.phtml 120 2011-08-02 15:02:35Z flicofloc@gmail.com $
+ */
+
+?>
+<?php if($this->OK) : ?>
+
+<div class="notify">Your registration has been submitted successfully. Please check your email address to activate your account.</div>
+
+<?php else : ?>
+
+<?= $this->form ?>
+
+<?php endif; ?>

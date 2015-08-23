@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file application/views/scripts/login/recover-email.phtml
+ * La view per la pagina di recupero della password (form per l'inserimento della mail).
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Script
+ * @version     $Id: recover-email.phtml 120 2011-08-02 15:02:35Z flicofloc@gmail.com $
+ */
+
+?>
+<?php if($this->emailSent) : ?>
+    <?php if($this->isOK) : ?>
+
+<div class="notify">Recover email sent. Please check your mailbox.</div>
+
+    <?php else : ?>
+
+<div class="error">No user has that email.</div>
+<?= $this->form ?>
+
+    <?php endif; ?>
+<?php else : ?>
+
+<?= $this->form ?>
+        
+<?php endif; ?>

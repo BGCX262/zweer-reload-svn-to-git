@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file application/views/scripts/login/index.phtml
+ * La view per la pagina di login.
+ *
+ * @category    application
+ * @package     Default
+ * @subpackage  View_Script
+ * @version     $Id: index.phtml 109 2011-08-01 10:47:25Z flicofloc@gmail.com $
+ */
+
+?>
+<?php if(Zwe_Model_User::getAuthResult() && Zwe_Model_User::getAuthResult()->getCode() != Zend_Auth_Result::SUCCESS) : ?>
+<div class="error">
+    Invalid email address or password or the account isn't activated yet. Please try again
+</div>
+<?php endif; ?>
+<?= $this->form ?>
+<div class="login_password_recover"><a href="<?= $this->url(array('controller' => 'login', 'action' => 'recoverEmail'), 'default') ?>" title="Recover the password">Forgot the password? Click here to recover it</a></div>
+<div class="login_register"><a href="<?= $this->url(array('controller' => 'login', 'action' => 'register'), 'default') ?>" title="Register">Register</a></div>
